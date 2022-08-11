@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xiaoxiao
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: xiaoxiao
+  template:
+    metadata:
+      labels:
+        app: xiaoxiao
+    spec:
+      containers:
+      - image: okteto.dev/xiaoxiao:latest
+        name: xiaoxiao
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: Site
+          value: "https://github.com/happyevero/Html/raw/main/S-html.zip"
+        - name: Vless_UUID
+          value: "52eaf76c-0c06-e4e1-02fb-03e2b7bbaa11"
+        - name: Vless_Path
+          value: "/vlwin10"
+        - name: Vmess_UUID
+          value: "52eaf76c-0c06-e4e1-02fb-03e2b7bbaa11"
+        - name: Vmess_Path
+          value: "/vmxp98"
+        - name: Share_Path
+          value: "/v2link"
